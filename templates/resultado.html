@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Resultado da Conversão</title>
+</head>
+<body>
+    <div class="section is-flex is-justify-content-center is-flex-direction-column is-align-content-center is-large">
+        <div class="container is-flex is-justify-content-center is-flex-direction-column is-align-content-center is-large">
+            <h2 class="is-flex is-justify-content-center is-size-1">Resultado da Conversão</h2>
+            <p class="mt-2 is-flex is-justify-content-center is-size-3">O valor de {{ valor }} {{ moeda_origem }} convertido para {{ moeda_destino }} é de: {{ valor_convertido }}</p>
+            <a href="{{ url_for('converter_moeda') }}" class="button is-medium is-half is-primary mt-4">Realizar outra Conversão</a>
+        </div>
+    </div>    
+</body>
+</html>

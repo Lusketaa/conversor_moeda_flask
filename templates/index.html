@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <div class="section is-flex is-justify-content-center is-flex-direction-column is-large">
+        <div class="container is-flex is-justify-content-center is-flex-direction-column">
+            <h1 class="title is-size-1">Conversor de Moedas</h1>
+            <form method="post" action="{{ url_for('converter_moeda') }}">
+                <div class="field">
+                    <label class="label" for="valor">Valor:</label>
+                    <div class="control">
+                        <input class="input is-primary" type="text" name="valor" required pattern="[0-9]+(\.[0-9]+)?" title="Digite apenas números inteiros ou decimais separados por ." placeholder="Digite o valor que queira converter">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="moeda_origem">Moeda de Origem:</label>
+                    <div class="control">
+                        <div class="select is-primary is-fullwidth">
+                            <select name="moeda_origem" required>
+                                <option value="BRL">Real Brasileiro (BRL)</option>
+                                <option value="USD">Dólar Americano (USD)</option>
+                                <option value="CAD">Dólar Canadense (CAD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="CNY">Yuan (CNY)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="moeda_destino">Moeda de Destino:</label>
+                    <div class="control">
+                        <div class="select is-primary is-fullwidth">
+                            <select name="moeda_destino" required>
+                                <option value="BRL">Real Brasileiro (BRL)</option>
+                                <option value="USD">Dólar Americano (USD)</option>
+                                <option value="CAD">Dólar Canadense (CAD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="CNY">Yuan (CNY)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control is-flex is-justify-content-center">
+                        <button class="button is-primary" type="submit">Converter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
